@@ -146,11 +146,8 @@ def main(mode: str="multi", playerFirst: bool=False):
     while True:
         # player 1
         newFrame(field)
-        if mode == "single":
-            if playerFirst: x1, y1 = playerInput(1, field)
-            else: x1, y1 = botInput(1, 2, field)
-        else:
-            x1, y1 = playerInput(1, field)
+        if mode == "multi" or playerFirst: x1, y1 = playerInput(1, field)
+        else: x1, y1 = botInput(1, 2, field)
         field[y1][x1] = 1
         winCheck(field)
         
@@ -158,11 +155,8 @@ def main(mode: str="multi", playerFirst: bool=False):
 
         # player 2
         newFrame(field)
-        if mode == "single":
-            if playerFirst: x2, y2 = botInput(2, 1, field)
-            else: x2, y2 = playerInput(2, field)
-        else:
-            x2, y2 = playerInput(2, field)
+        if mode == "multi" or not playerFirst: x2, y2 = playerInput(2, field)
+        else: x2, y2 = botInput(2, 1, field)
         field[y2][x2] = 2
         winCheck(field)
 
