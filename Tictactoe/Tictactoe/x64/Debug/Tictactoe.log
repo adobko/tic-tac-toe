@@ -1,4 +1,0 @@
-﻿  Tictactoe.cpp
-C:\Users\pavol\source\repos\Tictactoe\Tictactoe\Tictactoe.cpp(124,9): warning C4101: 'ones': unreferenced local variable
-C:\Users\pavol\source\repos\Tictactoe\Tictactoe\Tictactoe.cpp(113): warning C4715: 'loc': not all control paths return a value
-  Tictactoe.vcxproj -> C:\Users\pavol\source\repos\Tictactoe\x64\Debug\Tictactoe.exe
