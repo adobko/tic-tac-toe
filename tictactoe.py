@@ -53,28 +53,23 @@ def botInput(bid: int, pid: int, field: list[int]):
     rowIndex = -1
     for row in field:
         rowIndex += 1
-        if row.count(bid) == 2 & 0 in row:
-            return row.index(0), rowIndex
-        elif row.count(pid) == 2 & 0 in row:
+        if (row.count(bid) == 2 or row.count(pid) == 2) and 0 in row:
             return row.index(0), rowIndex
     for x in range(3):
         column = []
         for y in range(3):
             column.append(field[y][x])
-        if column.count(bid) == 2 & 0 in column:
-            return x, column.index(0)
-        elif column.count(pid) == 2 & 0 in column:
+        if (column.count(bid) == 2 or column.count(pid) == 2) and 0 in column:
             return x, column.index(0)
     diagonal1 = []
     diagonal2 = []
     for xy in range(3):
         diagonal1.append(field[xy][xy])
         diagonal2.append(field[xy][-xy-1])
-    if (diagonal1.count(1) == 2 or diagonal1.count(2) == 2) & 0 in diagonal1:
+    if (diagonal1.count(bid) == 2 or diagonal1.count(pid) == 2) and 0 in diagonal1:
         return diagonal1.index(0), diagonal1.index(0)
-    if (diagonal2.count(1) == 2 or diagonal2.count(2) == 2) & 0 in diagonal2:
+    if (diagonal2.count(bid) == 2 or diagonal2.count(pid) == 2) and 0 in diagonal2:
         return (-diagonal2.index(0)-1), diagonal2.index(0)
-    
     x, y = 1, 1
     while field[y][x] != 0:
         x, y = randint(0,2), randint(0,2)
